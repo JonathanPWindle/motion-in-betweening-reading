@@ -40,7 +40,8 @@ Generate human 3D motion between key frames
 ---
 
 ### Architecture 
-![architecture](../assets/toplevel.png)
+<!-- ![architecture](../assets/toplevel.png) -->
+<img src="../assets/toplevel.png" width="40%">
 
 --
 
@@ -59,4 +60,33 @@ Generate human 3D motion between key frames
 
 ---
 
-![architecture](../assets/full.png)
+<!-- ![architecture](../assets/full.png) -->
+<img src="../assets/full.png" width="40%">
+
+--
+
+* $Z_{tta}$: Time-to-arrival embedding represents the number of frames left to generate before reaching the target keyframe
+* $Z_{target}$: Scheduled target noise, scaled by a scalar $\lambda_{target}$, linearly decreases during the transition and reaches zero five frames before the target
+
+---
+
+## Losses
+
+* **Reconstruction Loss:** Angular Quaternion Loss is computed on the root and joint-local quaternions. Position Loss computed on the global position of each joint. Foot Contact Loss.
+
+![recon_losses](../assets/losses.png)
+
+* **Adversarial Loss:** Trained two additional feed-forward discriminator networks, long-term - over 10 frames, short-term - over 2 frames
+​
+
+![gen_losses](../assets/gen_loss.png)
+
+---
+
+### Evaluation - 
+
+* Normalized Power Spectrum Similarity (NPSS) [Gopalakrishnan et al, 2019]
+    * Correlated to human assessment of quality
+for motion
+
+![results](../assets/results.png)
