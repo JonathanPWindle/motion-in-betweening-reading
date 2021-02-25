@@ -10,7 +10,8 @@ Félix G. Harvey and Mike Yurick and Derek Nowrouzezahrai and Christopher Pal
 
 Generate human 3D motion between key frames
 
-<video data-autoplay src="../assets/example.mp4"></video>
+https://static-wordpress.akamaized.net/montreal.ubisoft.com/wp-content/uploads/2020/07/30140202/blanktrans2_HQ.mp4
+<!-- <video data-autoplay src="../assets/example.mp4"></video> -->
 
 ---
 
@@ -48,3 +49,7 @@ Generate human 3D motion between key frames
 * State encoder - Current character pose, expressed as a concatenation of the root velocity ($r_t$), joint-local quaternions ($q_t$) and feet-contact binary values ($c_t$)
 * Target encoder - very similar
 * Offset - Encoder Current offset from the target keyframe to the current pose, expressed as a concatenation of linear differences between root positions and orientations and between joint-local quaternions.
+
+--
+
+* encoders are all fully-connected Feed-Forward Networks
