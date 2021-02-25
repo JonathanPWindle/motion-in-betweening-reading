@@ -10,8 +10,8 @@ Félix G. Harvey and Mike Yurick and Derek Nowrouzezahrai and Christopher Pal
 
 Generate human 3D motion between key frames
 
-https://static-wordpress.akamaized.net/montreal.ubisoft.com/wp-content/uploads/2020/07/30140202/blanktrans2_HQ.mp4
-<!-- <video data-autoplay src="../assets/example.mp4"></video> -->
+<!-- https://static-wordpress.akamaized.net/montreal.ubisoft.com/wp-content/uploads/2020/07/30140202/blanktrans2_HQ.mp4 -->
+<video data-autoplay src="../assets/example.mp4"></video>
 
 ---
 
@@ -52,4 +52,10 @@ https://static-wordpress.akamaized.net/montreal.ubisoft.com/wp-content/uploads/2
 
 --
 
-* encoders are all fully-connected Feed-Forward Networks
+* Architecture is based on the Recurrent Transition Networks (RTN)
+* Encoders are all fully-connected Feed-Forward Networks
+* Original RTN architecture, resulting embeddings for each of those inputs are passed directly to an LSTM
+* Two modifications
+
+---
+
