@@ -59,3 +59,4 @@ Generate human 3D motion between key frames
 
 ---
 
+![architecture](../assets/full.png)
