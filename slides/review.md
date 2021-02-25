@@ -39,4 +39,12 @@ Generate human 3D motion between key frames
 ---
 
 ### Architecture 
-![architecture](../assets/top-level.png)
+![architecture](../assets/toplevel.png)
+
+--
+
+* Up to 10 seed frames as past context 
+* Target keyframe
+* State encoder - Current character pose, expressed as a concatenation of the root velocity ($r_t$), joint-local quaternions ($q_t$) and feet-contact binary values ($c_t$)
+* Target encoder - very similar
+* Offset - Encoder Current offset from the target keyframe to the current pose, expressed as a concatenation of linear differences between root positions and orientations and between joint-local quaternions.
