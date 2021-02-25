@@ -23,8 +23,15 @@ Generate human 3D motion between key frames
 
 ---
 
-### Dataset - LAFan1
-* Subset of H36M
+### Dataset - H36M/LAFan1
+* LaFAN1 is a new dataset to this paper
+* 496,672 motion frames sampled at 30Hz
+* Actions performed by 5 subjects
+
+---
+
+### Dataset - H36M/LAFan1
+* LaFAN1 is a new dataset to this paper
 * Used a skeleton model of J=28 (H36M) and J=22 (LaFAN1)
 * Represented using:
     * Quaternian vector $q_t$ of $j * 4$ dimensions encoding rotation
@@ -33,7 +40,7 @@ Generate human 3D motion between key frames
 
 ---
 
-### Dataset - LAFan1
+### Dataset - H36M/LAFan1
 * Rotate each input sequence seen by the network around the $Y$ axis (up) so that the root of the skeleton points towards the $X_+$ axis on the last frame of past context
     *  Store the applied rotation in order to rotate back the generated motion to fit the context
 
@@ -76,6 +83,8 @@ Generate human 3D motion between key frames
 
 ![recon_losses](../assets/losses.png)
 
+---
+
 * **Adversarial Loss:** Trained two additional feed-forward discriminator networks, long-term - over 10 frames, short-term - over 2 frames
 ​
 
@@ -83,10 +92,33 @@ Generate human 3D motion between key frames
 
 ---
 
-### Evaluation - 
+### Evaluation - H36M
 
 * Normalized Power Spectrum Similarity (NPSS) [Gopalakrishnan et al, 2019]
     * Correlated to human assessment of quality
 for motion
+*  Model is similar to the one earlier, with only quaternions velocities as input
 
 ![results](../assets/results.png)
+
+---
+
+### Evaluation - H36M Walking-only
+
+* L2 distances of global quaternions (L2Q) and global positions (L2P)
+
+![results](../assets/walkres.png)
+
+---
+
+### Evaluation - LaFAN1
+* Compare a reconstruction-based, future-conditioned Transition Generator ($TG_{rec}$) using $L_{quat}$, $L_{root}$, $L_{pos}$ and $L_{contact}$
+* With augmented adversarial Transition Generator ($TG_{complete}$) that adds proposed embedding modifiers $z_{tta}$, $z_{tta}$ and our adversarial loss $L_{gen}$
+
+![results](../assets/laFAN1.png)
+
+
+---
+
+## Visual Results
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fTV7sXqO6ig" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
