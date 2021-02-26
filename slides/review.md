@@ -99,7 +99,7 @@ for motion
 
 * L2 distances of global quaternions (L2Q) and global positions (L2P)
 
-![results](../assets/walkres.png)
+<img src="../assets/walkres.png" width="40%">
 
 ---
 
@@ -107,7 +107,7 @@ for motion
 * Compare a reconstruction-based, future-conditioned Transition Generator ($TG_{rec}$) using $L_{quat}$, $L_{root}$, $L_{pos}$ and $L_{contact}$
 * With augmented adversarial Transition Generator ($TG_{complete}$) that adds proposed embedding modifiers $z_{tta}$, $z_{tta}$ and our adversarial loss $L_{gen}$
 
-![results](../assets/laFAN1.png)
+<img src="../assets/laFAN1.png" width="40%">
 
 
 ---
