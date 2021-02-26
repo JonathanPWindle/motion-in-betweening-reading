@@ -15,14 +15,6 @@ Generate human 3D motion between key frames
 
 ---
 
-## Prior work
-
-* Non-Generative
-    * Requires motion database
-    * Not scalable
-
----
-
 ### Dataset - H36M/LAFan1
 * LaFAN1 is a new dataset to this paper
 * 496,672 motion frames sampled at 30Hz
@@ -46,7 +38,7 @@ Generate human 3D motion between key frames
 
 ---
 
-### Architecture 
+#### Architecture 
 <!-- ![architecture](../assets/toplevel.png) -->
 <img src="../assets/toplevel.png" width="40%">
 
